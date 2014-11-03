@@ -53,13 +53,23 @@ namespace task4
 
         public bool IsFree(TRoom room, DateTime d1, DateTime d2)
         {
-            // TODO
-            return false;
+            if (d1 >= d2)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            return (d2 < room.BookedFrom) || (d1 > room.BookedTo);
         }
 
         public void Book(TRoom room, DateTime d1, DateTime d2)
         {
-            // TODO
+            if ((d1 >= d2) || !IsFree(room, d1, d2))
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            room.SetBookedFrom(d1);
+            room.SetBookedTo(d2);
         }
 
         public IEnumerable<TRoom> Where(Func<TRoom, bool> f)

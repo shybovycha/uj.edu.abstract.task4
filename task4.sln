@@ -21,6 +21,6 @@ Global
 		{9CBC47B1-054D-40E7-B6DC-AC0BABEC7099}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = task4\task4.csproj
+		StartupItem = tests\tests.csproj
 	EndGlobalSection
 EndGlobal
